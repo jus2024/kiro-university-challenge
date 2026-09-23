@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Test on Save",
+      "trigger": "PostFileSave",
+      "description": "Runs the Vitest suite (property-based + unit tests) whenever a TypeScript/TSX file is saved, so the 17 correctness properties and other tests stay green as the code changes.",
+      "matcher": "\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "npm test",
+        "timeout": 120
+      }
+    }
+  ]
+}
