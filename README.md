@@ -102,6 +102,26 @@ runs each), co-located with the domain and storage modules they target
 its design property via a `// Feature: task-habit-tracker, Property {n}: ...`
 comment, tying the tests back to the spec.
 
+### Lesson 5 — Powers
+
+`.kiro/powers/task-habit-tracker-frontend/` is a project-specific Kiro Power that
+loads on-demand context when working on this app. It follows the standard Power
+layout — a `plugin.json` manifest, `skills/` (architecture, domain rules, and
+frontend conventions), and an `mcp.json` bundling the project's MCP servers. It
+was authored for this project (inspired by community React/MCP powers) rather than
+installed from a third party, so its contents are reviewed and trusted.
+
+### Lesson 6 — Model Context Protocol (MCP)
+
+`.kiro/settings/mcp.json` registers two MCP servers used during development, both
+launched with `uvx`:
+
+- `fetch` (`mcp-server-fetch`) — retrieve up-to-date documentation from URLs.
+- `git` (`mcp-server-git`) — read local repository status, history, and diffs.
+
+The same servers are also bundled inside the Lesson 5 Power's `mcp.json`, so the
+Power packages its own tools. `autoApprove` is limited to read-only operations.
+
 ## License
 
 This project was created for the Kiro University Challenge.

@@ -1,0 +1,24 @@
+{
+  "name": "task-habit-tracker-frontend",
+  "version": "1.0.0",
+  "description": "Project-specific knowledge for the Task & Habit Tracker: its layered architecture, domain rules, spec-driven workflow, and accessible, responsive React + Tailwind UI conventions. Loads on demand when working on this app's frontend, domain logic, or tests.",
+  "keywords": [
+    "task-habit-tracker",
+    "tracker",
+    "habit",
+    "task",
+    "streak",
+    "domain layer",
+    "reducer",
+    "localStorage",
+    "tailwind",
+    "accessibility",
+    "property-based test",
+    "fast-check"
+  ],
+  "skills": [
+    "skills/architecture",
+    "skills/domain-rules",
+    "skills/frontend-conventions"
+  ]
+}
