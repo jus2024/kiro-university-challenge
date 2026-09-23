@@ -25,6 +25,12 @@ export interface TaskItemProps {
   onEdit?: (taskId: string) => void;
 }
 
+// Consistent action-button styling; a min height keeps touch targets adequate.
+const actionButtonClass =
+  'inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 disabled:cursor-not-allowed disabled:opacity-50';
+const deleteButtonClass =
+  'inline-flex min-h-11 items-center justify-center rounded-md border border-red-200 bg-white px-3 py-1.5 text-sm font-medium text-red-600 shadow-sm transition-colors hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50';
+
 /**
  * Render one task with its complete/edit/delete controls.
  *
@@ -50,49 +56,75 @@ export default function TaskItem({ task, onEdit }: TaskItemProps) {
   }
 
   return (
-    <li className="task-item">
-      <div className="task-item__body">
-        <span className="task-item__title">{task.title}</span>
-        <span className="task-item__status">{isDone ? 'Done' : 'Open'}</span>
-        {task.dueDate !== null && (
-          <span className="task-item__due">Due {task.dueDate}</span>
-        )}
-        {task.tags.length > 0 && (
-          <ul className="task-item__tags" aria-label="Tags">
-            {task.tags.map((tag) => (
-              <li key={tag} className="task-item__tag">
-                {tag}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+    <li className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`font-medium ${
+                isDone ? 'text-slate-400 line-through' : 'text-slate-900'
+              }`}
+            >
+              {task.title}
+            </span>
+            <span
+              className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
+                isDone
+                  ? 'bg-green-100 text-green-700'
+                  : 'bg-amber-100 text-amber-700'
+              }`}
+            >
+              {isDone ? 'Done' : 'Open'}
+            </span>
+          </div>
+          {task.dueDate !== null && (
+            <span className="mt-1 block text-sm text-slate-500">
+              Due {task.dueDate}
+            </span>
+          )}
+          {task.tags.length > 0 && (
+            <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Tags">
+              {task.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-600"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
 
-      <div className="task-item__actions">
-        <button
-          type="button"
-          onClick={handleComplete}
-          disabled={isDone}
-          aria-label={`Complete task: ${task.title}`}
-        >
-          Complete
-        </button>
+        <div className="flex flex-shrink-0 flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={handleComplete}
+            disabled={isDone}
+            aria-label={`Complete task: ${task.title}`}
+            className={actionButtonClass}
+          >
+            Complete
+          </button>
 
-        <button
-          type="button"
-          onClick={() => onEdit?.(task.id)}
-          aria-label={`Edit task: ${task.title}`}
-        >
-          Edit
-        </button>
+          <button
+            type="button"
+            onClick={() => onEdit?.(task.id)}
+            aria-label={`Edit task: ${task.title}`}
+            className={actionButtonClass}
+          >
+            Edit
+          </button>
 
-        <button
-          type="button"
-          onClick={() => setConfirmingDelete(true)}
-          aria-label={`Delete task: ${task.title}`}
-        >
-          Delete
-        </button>
+          <button
+            type="button"
+            onClick={() => setConfirmingDelete(true)}
+            aria-label={`Delete task: ${task.title}`}
+            className={deleteButtonClass}
+          >
+            Delete
+          </button>
+        </div>
       </div>
 
       {confirmingDelete && (

@@ -25,8 +25,16 @@ export function HabitList({ habits }: HabitListProps): JSX.Element {
   const items = habits ?? state.habits;
   const today = toDateKey(new Date());
 
+  if (items.length === 0) {
+    return (
+      <p className="mt-4 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+        No habits yet.
+      </p>
+    );
+  }
+
   return (
-    <ul className="habit-list">
+    <ul className="mt-4 flex flex-col gap-2">
       {items.map((habit) => (
         <HabitItem key={habit.id} habit={habit} today={today} />
       ))}

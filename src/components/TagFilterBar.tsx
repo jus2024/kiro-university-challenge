@@ -63,29 +63,42 @@ export function TagFilterBar({
     filterTasksByTags(tasks, selectedTags).length === 0;
 
   return (
-    <section aria-label="Filter tasks by tag" className="tag-filter-bar">
+    <section
+      aria-label="Filter tasks by tag"
+      className="rounded-lg border border-slate-200 bg-slate-50 p-3"
+    >
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        Filter by tag
+      </p>
       {availableTags.length === 0 ? (
-        <p className="tag-filter-empty">No tags available</p>
+        <p className="text-sm text-slate-500">No tags available</p>
       ) : (
-        <ul className="tag-filter-options">
+        <ul className="flex flex-wrap gap-2">
           {availableTags.map((tag) => {
             const inputId = `tag-filter-${tag}`;
+            const isChecked = selected.has(tag);
             return (
               <li key={tag}>
                 <input
                   type="checkbox"
                   id={inputId}
-                  checked={selected.has(tag)}
+                  checked={isChecked}
                   onChange={(e) => toggle(tag, e.target.checked)}
+                  className="peer sr-only"
                 />
-                <label htmlFor={inputId}>{tag}</label>
+                <label
+                  htmlFor={inputId}
+                  className="inline-flex min-h-9 cursor-pointer items-center rounded-full border border-slate-300 bg-white px-3 py-1 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 peer-checked:border-blue-600 peer-checked:bg-blue-600 peer-checked:text-white peer-focus-visible:ring-2 peer-focus-visible:ring-blue-500/50"
+                >
+                  {tag}
+                </label>
               </li>
             );
           })}
         </ul>
       )}
       {noMatch ? (
-        <p role="status" className="tag-filter-no-match">
+        <p role="status" className="mt-2 text-sm text-slate-600">
           {NO_MATCH_MESSAGE}
         </p>
       ) : null}

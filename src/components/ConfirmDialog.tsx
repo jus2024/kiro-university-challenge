@@ -58,23 +58,41 @@ export default function ConfirmDialog({
   }
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="confirm-dialog-title"
-      aria-describedby="confirm-dialog-message"
-      className="confirm-dialog"
-      onKeyDown={handleKeyDown}
-    >
-      <h2 id="confirm-dialog-title">{title}</h2>
-      <p id="confirm-dialog-message">{message}</p>
-      <div className="confirm-dialog__actions">
-        <button ref={cancelRef} type="button" onClick={onCancel}>
-          {cancelLabel}
-        </button>
-        <button type="button" onClick={onConfirm}>
-          {confirmLabel}
-        </button>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 p-4">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="confirm-dialog-title"
+        aria-describedby="confirm-dialog-message"
+        className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-6 shadow-xl"
+        onKeyDown={handleKeyDown}
+      >
+        <h2
+          id="confirm-dialog-title"
+          className="text-lg font-semibold text-slate-900"
+        >
+          {title}
+        </h2>
+        <p id="confirm-dialog-message" className="mt-2 text-sm text-slate-600">
+          {message}
+        </p>
+        <div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+          <button
+            ref={cancelRef}
+            type="button"
+            onClick={onCancel}
+            className="inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50"
+          >
+            {cancelLabel}
+          </button>
+          <button
+            type="button"
+            onClick={onConfirm}
+            className="inline-flex min-h-11 items-center justify-center rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500/50"
+          >
+            {confirmLabel}
+          </button>
+        </div>
       </div>
     </div>
   );

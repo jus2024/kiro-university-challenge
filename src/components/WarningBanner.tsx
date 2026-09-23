@@ -28,11 +28,15 @@ export function WarningBanner(): JSX.Element | null {
   }
 
   return (
-    <div className="warning-banner" role="status" aria-live="polite">
-      <span className="warning-banner__message">{warning}</span>
+    <div
+      className="mb-6 flex items-start gap-3 rounded-lg border border-amber-300 bg-amber-50 p-4 text-amber-900"
+      role="status"
+      aria-live="polite"
+    >
+      <span className="flex-1 text-sm">{warning}</span>
       <button
         type="button"
-        className="warning-banner__dismiss"
+        className="inline-flex min-h-9 items-center justify-center rounded-md border border-amber-300 bg-white px-3 py-1 text-sm font-medium text-amber-800 transition-colors hover:bg-amber-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50"
         aria-label="Dismiss warning"
         onClick={dismissWarning}
       >

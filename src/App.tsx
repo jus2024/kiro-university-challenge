@@ -53,44 +53,83 @@ function AppContent(): JSX.Element {
       : state.tasks.find((task) => task.id === editingTaskId);
 
   return (
-    <main>
-      <h1>Task &amp; Habit Tracker</h1>
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <main className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+        <header className="mb-8">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Task &amp; Habit Tracker
+          </h1>
+          <p className="mt-1 text-sm text-slate-500">
+            Capture tasks, build habits, and track your progress.
+          </p>
+        </header>
 
-      <WarningBanner />
+        <WarningBanner />
 
-      <section aria-labelledby="tasks-heading">
-        <h2 id="tasks-heading">Tasks</h2>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <section
+            aria-labelledby="tasks-heading"
+            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm lg:col-span-2"
+          >
+            <h2
+              id="tasks-heading"
+              className="mb-4 text-xl font-semibold text-slate-800"
+            >
+              Tasks
+            </h2>
 
-        <TaskForm />
+            <TaskForm />
 
-        {taskBeingEdited !== undefined && (
-          <section aria-label="Edit task">
-            <TaskForm
-              task={taskBeingEdited}
-              onSubmitted={() => setEditingTaskId(null)}
-            />
+            {taskBeingEdited !== undefined && (
+              <section
+                aria-label="Edit task"
+                className="mt-4 rounded-lg border border-blue-200 bg-blue-50/60 p-4"
+              >
+                <TaskForm
+                  task={taskBeingEdited}
+                  onSubmitted={() => setEditingTaskId(null)}
+                />
+              </section>
+            )}
+
+            <div className="mt-6">
+              <TagFilterBar
+                tasks={state.tasks}
+                selectedTags={selectedTags}
+                availableTags={options}
+                onChange={setSelectedTags}
+              />
+            </div>
+
+            <div className="mt-4">
+              <TaskList
+                tasks={filtered}
+                onEdit={(taskId) => setEditingTaskId(taskId)}
+              />
+            </div>
           </section>
-        )}
 
-        <TagFilterBar
-          tasks={state.tasks}
-          selectedTags={selectedTags}
-          availableTags={options}
-          onChange={setSelectedTags}
-        />
+          <section
+            aria-labelledby="habits-heading"
+            className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+          >
+            <h2
+              id="habits-heading"
+              className="mb-4 text-xl font-semibold text-slate-800"
+            >
+              Habits
+            </h2>
 
-        <TaskList tasks={filtered} onEdit={(taskId) => setEditingTaskId(taskId)} />
-      </section>
+            <HabitForm />
+            <HabitList />
+          </section>
+        </div>
 
-      <section aria-labelledby="habits-heading">
-        <h2 id="habits-heading">Habits</h2>
-
-        <HabitForm />
-        <HabitList />
-      </section>
-
-      <ProgressView />
-    </main>
+        <div className="mt-6">
+          <ProgressView />
+        </div>
+      </main>
+    </div>
   );
 }
 

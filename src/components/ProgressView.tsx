@@ -30,38 +30,69 @@ export function ProgressView(): JSX.Element {
   const weeklyCount = tasksCompletedInWeekOf(state.tasks, today);
 
   return (
-    <section className="progress-view" aria-labelledby="progress-heading">
-      <h2 id="progress-heading">Progress</h2>
+    <section
+      className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+      aria-labelledby="progress-heading"
+    >
+      <h2
+        id="progress-heading"
+        className="mb-4 text-xl font-semibold text-slate-800"
+      >
+        Progress
+      </h2>
 
-      <section className="progress-tasks" aria-labelledby="progress-tasks-heading">
-        <h3 id="progress-tasks-heading">Tasks completed</h3>
-        <dl className="progress-task-counts">
-          <div className="progress-stat">
-            <dt>Today</dt>
-            <dd>{dailyCount}</dd>
+      <section className="mb-6" aria-labelledby="progress-tasks-heading">
+        <h3
+          id="progress-tasks-heading"
+          className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500"
+        >
+          Tasks completed
+        </h3>
+        <dl className="grid grid-cols-2 gap-4 sm:max-w-md">
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <dt className="text-sm text-slate-500">Today</dt>
+            <dd className="mt-1 text-2xl font-bold text-slate-900">
+              {dailyCount}
+            </dd>
           </div>
-          <div className="progress-stat">
-            <dt>This week</dt>
-            <dd>{weeklyCount}</dd>
+          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <dt className="text-sm text-slate-500">This week</dt>
+            <dd className="mt-1 text-2xl font-bold text-slate-900">
+              {weeklyCount}
+            </dd>
           </div>
         </dl>
       </section>
 
-      <section className="progress-habits" aria-labelledby="progress-habits-heading">
-        <h3 id="progress-habits-heading">Habit progress</h3>
+      <section aria-labelledby="progress-habits-heading">
+        <h3
+          id="progress-habits-heading"
+          className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-500"
+        >
+          Habit progress
+        </h3>
         {state.habits.length === 0 ? (
-          <p className="progress-empty">No habits are being tracked yet.</p>
+          <p className="rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+            No habits are being tracked yet.
+          </p>
         ) : (
-          <ul className="progress-habit-list">
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {state.habits.map((habit) => (
-              <li key={habit.id} className="progress-habit">
-                <span className="progress-habit-name">{habit.name}</span>
-                <span className="progress-habit-streak">
-                  Streak: {currentStreak(habit, today)}
+              <li
+                key={habit.id}
+                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <span className="block font-medium text-slate-900">
+                  {habit.name}
                 </span>
-                <span className="progress-habit-rate">
-                  Completion rate: {completionRate(habit, today)}%
-                </span>
+                <div className="mt-2 flex flex-wrap gap-2 text-sm">
+                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 font-semibold text-blue-700">
+                    Streak: {currentStreak(habit, today)}
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 font-semibold text-green-700">
+                    Completion rate: {completionRate(habit, today)}%
+                  </span>
+                </div>
               </li>
             ))}
           </ul>

@@ -15,6 +15,13 @@ import type { TargetFrequency } from '../domain/types';
 import { validateHabitName, validateTargetFrequency } from '../domain/validation';
 import { useApp } from '../state/AppContext';
 
+const labelClass = 'block text-sm font-medium text-slate-700';
+const inputClass =
+  'mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 aria-[invalid=true]:border-red-500';
+const errorClass = 'mt-1 text-sm text-red-600';
+const primaryButtonClass =
+  'inline-flex min-h-11 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 disabled:cursor-not-allowed disabled:opacity-50';
+
 /**
  * Render the habit creation form. Reads `dispatch` from the app context and
  * dispatches `CREATE_HABIT` on a valid submit (R7.1). Validation failures are
@@ -66,9 +73,11 @@ export function HabitForm(): JSX.Element {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form onSubmit={handleSubmit} noValidate className="space-y-4">
       <div>
-        <label htmlFor="habit-name">Habit name</label>
+        <label htmlFor="habit-name" className={labelClass}>
+          Habit name
+        </label>
         <input
           id="habit-name"
           type="text"
@@ -76,16 +85,19 @@ export function HabitForm(): JSX.Element {
           onChange={(event) => setName(event.target.value)}
           aria-invalid={nameError !== null}
           aria-describedby={nameError !== null ? 'habit-name-error' : undefined}
+          className={inputClass}
         />
         {nameError !== null && (
-          <p id="habit-name-error" role="alert">
+          <p id="habit-name-error" role="alert" className={errorClass}>
             {nameError}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="habit-frequency">Target frequency</label>
+        <label htmlFor="habit-frequency" className={labelClass}>
+          Target frequency
+        </label>
         <select
           id="habit-frequency"
           value={frequency}
@@ -94,18 +106,21 @@ export function HabitForm(): JSX.Element {
           aria-describedby={
             frequencyError !== null ? 'habit-frequency-error' : undefined
           }
+          className={inputClass}
         >
           <option value="">Select a frequency</option>
           <option value="daily">Daily</option>
         </select>
         {frequencyError !== null && (
-          <p id="habit-frequency-error" role="alert">
+          <p id="habit-frequency-error" role="alert" className={errorClass}>
             {frequencyError}
           </p>
         )}
       </div>
 
-      <button type="submit">Add habit</button>
+      <button type="submit" className={primaryButtonClass}>
+        Add habit
+      </button>
     </form>
   );
 }

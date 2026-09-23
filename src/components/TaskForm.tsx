@@ -39,6 +39,16 @@ interface FieldErrors {
   tags?: string;
 }
 
+// Shared utility class strings keep inputs/labels/buttons visually consistent.
+const labelClass = 'block text-sm font-medium text-slate-700';
+const inputClass =
+  'mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 hover:border-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 aria-[invalid=true]:border-red-500';
+const errorClass = 'mt-1 text-sm text-red-600';
+const primaryButtonClass =
+  'inline-flex min-h-11 items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 disabled:cursor-not-allowed disabled:opacity-50';
+const secondaryButtonClass =
+  'inline-flex min-h-11 items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50';
+
 export default function TaskForm({ task, onSubmitted }: TaskFormProps) {
   const { dispatch } = useApp();
   const isEdit = task !== undefined;
@@ -152,9 +162,16 @@ export default function TaskForm({ task, onSubmitted }: TaskFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate aria-label={isEdit ? 'Edit task' : 'Create task'}>
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      aria-label={isEdit ? 'Edit task' : 'Create task'}
+      className="space-y-4"
+    >
       <div>
-        <label htmlFor={titleId}>Title</label>
+        <label htmlFor={titleId} className={labelClass}>
+          Title
+        </label>
         <input
           id={titleId}
           type="text"
@@ -162,16 +179,19 @@ export default function TaskForm({ task, onSubmitted }: TaskFormProps) {
           onChange={(e) => setTitle(e.target.value)}
           aria-invalid={errors.title ? true : undefined}
           aria-describedby={errors.title ? titleErrorId : undefined}
+          className={inputClass}
         />
         {errors.title && (
-          <p id={titleErrorId} role="alert">
+          <p id={titleErrorId} role="alert" className={errorClass}>
             {errors.title}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor={dueDateId}>Due date</label>
+        <label htmlFor={dueDateId} className={labelClass}>
+          Due date
+        </label>
         <input
           id={dueDateId}
           type="date"
@@ -179,49 +199,63 @@ export default function TaskForm({ task, onSubmitted }: TaskFormProps) {
           onChange={(e) => setDueDate(e.target.value)}
           aria-invalid={errors.dueDate ? true : undefined}
           aria-describedby={errors.dueDate ? dueDateErrorId : undefined}
+          className={inputClass}
         />
         {errors.dueDate && (
-          <p id={dueDateErrorId} role="alert">
+          <p id={dueDateErrorId} role="alert" className={errorClass}>
             {errors.dueDate}
           </p>
         )}
       </div>
 
       <div>
-        <label htmlFor={tagsId}>Add tag</label>
-        <input
-          id={tagsId}
-          type="text"
-          value={tagDraft}
-          onChange={(e) => setTagDraft(e.target.value)}
-          onKeyDown={(e) => {
-            // Enter within the tag input adds the tag rather than submitting
-            // the whole form.
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              handleAddTag();
-            }
-          }}
-          aria-invalid={errors.tags ? true : undefined}
-          aria-describedby={errors.tags ? tagsErrorId : undefined}
-        />
-        <button type="button" onClick={handleAddTag}>
+        <label htmlFor={tagsId} className={labelClass}>
           Add tag
-        </button>
+        </label>
+        <div className="mt-1 flex flex-col gap-2 sm:flex-row">
+          <input
+            id={tagsId}
+            type="text"
+            value={tagDraft}
+            onChange={(e) => setTagDraft(e.target.value)}
+            onKeyDown={(e) => {
+              // Enter within the tag input adds the tag rather than submitting
+              // the whole form.
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                handleAddTag();
+              }
+            }}
+            aria-invalid={errors.tags ? true : undefined}
+            aria-describedby={errors.tags ? tagsErrorId : undefined}
+            className={`${inputClass} mt-0 sm:flex-1`}
+          />
+          <button
+            type="button"
+            onClick={handleAddTag}
+            className={secondaryButtonClass}
+          >
+            Add tag
+          </button>
+        </div>
         {errors.tags && (
-          <p id={tagsErrorId} role="alert">
+          <p id={tagsErrorId} role="alert" className={errorClass}>
             {errors.tags}
           </p>
         )}
         {tags.length > 0 && (
-          <ul aria-label="Selected tags">
+          <ul aria-label="Selected tags" className="mt-2 flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <li key={tag}>
+              <li
+                key={tag}
+                className="inline-flex items-center gap-1 rounded-full bg-blue-100 py-1 pl-3 pr-1 text-sm font-medium text-blue-800"
+              >
                 <span>{tag}</span>
                 <button
                   type="button"
                   onClick={() => handleRemoveTag(tag)}
                   aria-label={`Remove tag ${tag}`}
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full text-blue-700 transition-colors hover:bg-blue-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50"
                 >
                   ×
                 </button>
@@ -231,7 +265,9 @@ export default function TaskForm({ task, onSubmitted }: TaskFormProps) {
         )}
       </div>
 
-      <button type="submit">{isEdit ? 'Save task' : 'Add task'}</button>
+      <button type="submit" className={primaryButtonClass}>
+        {isEdit ? 'Save task' : 'Add task'}
+      </button>
     </form>
   );
 }

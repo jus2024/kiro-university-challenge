@@ -22,11 +22,15 @@ export interface TaskListProps {
  */
 export default function TaskList({ tasks, onEdit }: TaskListProps) {
   if (tasks.length === 0) {
-    return <p className="task-list__empty">No tasks yet.</p>;
+    return (
+      <p className="rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-6 text-center text-sm text-slate-500">
+        No tasks yet.
+      </p>
+    );
   }
 
   return (
-    <ul className="task-list" aria-label="Tasks">
+    <ul className="flex flex-col gap-3" aria-label="Tasks">
       {tasks.map((task) => (
         <TaskItem key={task.id} task={task} onEdit={onEdit} />
       ))}

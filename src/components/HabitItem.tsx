@@ -40,15 +40,23 @@ export function HabitItem({ habit, today }: HabitItemProps): JSX.Element {
   }
 
   return (
-    <li className="habit-item">
+    <li className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-3 shadow-sm">
       <input
         id={checkboxId}
         type="checkbox"
         checked={checked}
         onChange={handleToggle}
+        className="h-5 w-5 flex-shrink-0 cursor-pointer rounded border-slate-300 text-blue-600 focus-visible:ring-2 focus-visible:ring-blue-500/50"
       />
-      <label htmlFor={checkboxId}>{habit.name}</label>
-      <span className="habit-streak">Streak: {streak}</span>
+      <label
+        htmlFor={checkboxId}
+        className="flex-1 cursor-pointer text-sm font-medium text-slate-800"
+      >
+        {habit.name}
+      </label>
+      <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+        Streak: {streak}
+      </span>
     </li>
   );
 }
