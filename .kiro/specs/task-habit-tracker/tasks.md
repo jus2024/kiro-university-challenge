@@ -32,7 +32,7 @@ Every property test is tagged with the comment format:
     - In `src/domain/dateUtils.ts`, implement `toDateKey`, `addDays`, `isSameLocalDay`, `weekRange` (Monday–Sunday local week), and `lastNDays`, all in local time and pure (no `Date.now()`).
     - _Requirements: 10.2_
 
-  - [ ]* 3.2 Write unit tests for dateUtils
+  - [x]* 3.2 Write unit tests for dateUtils
     - Test `toDateKey` formatting, `addDays` across month/year boundaries, `weekRange` for days landing on Monday and Sunday, and `lastNDays` ordering/length.
     - _Requirements: 10.2_
 
@@ -41,15 +41,15 @@ Every property test is tagged with the comment format:
     - In `src/domain/validation.ts`, implement `validateTaskTitle` (trim → 1..200), `validateDueDate` (valid date or null), `validateTagName` (trim → 1..50), `validateTagsForTask` (distinct + ≤20), `validateHabitName` (trim → 1..100), and `validateTargetFrequency`. All return `Validated<T>` and never throw.
     - _Requirements: 1.3, 1.4, 1.5, 1.6, 3.3, 5.3, 5.4, 5.5, 7.2, 7.3, 7.4_
 
-  - [ ]* 4.2 Write property test for title validation
+  - [x]* 4.2 Write property test for title validation
     - **Property 2: Title validity governs task creation and edits** — trimmed length 0 or >200 → `ok:false`; 1–200 → `ok:true` with trimmed value.
     - **Validates: Requirements 1.3, 1.4, 3.1, 3.3**
 
-  - [ ]* 4.3 Write property test for due-date validation
+  - [x]* 4.3 Write property test for due-date validation
     - **Property 3: Due-date validation accepts exactly parseable dates** — unparseable → `ok:false`; parseable or `null` → `ok:true`.
     - **Validates: Requirements 1.5**
 
-  - [ ]* 4.4 Write unit tests for validation boundaries
+  - [x]* 4.4 Write unit tests for validation boundaries
     - Test title lengths 200 vs 201, habit-name lengths 100 vs 101, specific valid/invalid due-date strings, and missing target frequency.
     - _Requirements: 1.4, 3.3, 7.3, 7.4_
 
@@ -58,19 +58,19 @@ Every property test is tagged with the comment format:
     - In `src/domain/tasks.ts`, implement `createTask` (trims title, defaults `status:"open"`, `completedAt:null`, appends to list), `editTask` (validates then patches title/dueDate/tags, else returns state unchanged), `completeTask` (sets `"done"` + `completedAt=now`, idempotent stamp), and `deleteTask` (removes only that task).
     - _Requirements: 1.1, 1.2, 2.1, 2.2, 2.4, 3.1, 3.2, 4.2_
 
-  - [ ]* 5.2 Write property test for task creation
+  - [x]* 5.2 Write property test for task creation
     - **Property 1: Task creation grows the list and preserves inputs** — list length +1; new task has trimmed title, given due date/tags, `status:"open"`, `completedAt:null`.
     - **Validates: Requirements 1.1, 1.2**
 
-  - [ ]* 5.3 Write property test for task completion
+  - [x]* 5.3 Write property test for task completion
     - **Property 7: Completing a task is idempotent and stamps once** — first complete sets `done`/`completedAt=now`; re-complete with later `now2` keeps original `completedAt`.
     - **Validates: Requirements 2.1, 2.2, 2.4**
 
-  - [ ]* 5.4 Write property test for task deletion
+  - [x]* 5.4 Write property test for task deletion
     - **Property 8: Deleting a task removes only that task** — result omits exactly that task, keeps all others, length −1.
     - **Validates: Requirements 4.2**
 
-  - [ ]* 5.5 Write property test for edit title validity
+  - [x]* 5.5 Write property test for edit title validity
     - **Property 2: Title validity governs task creation and edits** (edit branch) — invalid title leaves state unchanged; valid title applies trimmed value.
     - **Validates: Requirements 3.1, 3.3**
 
@@ -79,15 +79,15 @@ Every property test is tagged with the comment format:
     - In `src/domain/tags.ts`, implement `addTagToTask` (associate trimmed name iff valid, distinct, and <20 tags; else unchanged), `availableTags` (distinct in-use names), and `filterTasksByTags` (AND/superset match; empty selection → all tasks).
     - _Requirements: 1.6, 5.1, 5.2, 5.3, 5.4, 5.5, 6.1, 6.2, 6.3_
 
-  - [ ]* 6.2 Write property test for tag-add semantics
+  - [x]* 6.2 Write property test for tag-add semantics
     - **Property 4: Tag-add semantics (valid, distinct, capped)** — associates iff valid/distinct/<20; rejected cases leave tags unchanged; accepted cases stay distinct with length ≤20.
     - **Validates: Requirements 1.6, 5.1, 5.3, 5.4, 5.5**
 
-  - [ ]* 6.3 Write property test for available tags
+  - [x]* 6.3 Write property test for available tags
     - **Property 5: Available tags are exactly the distinct tags in use** — each in-use tag appears once, no unused names.
     - **Validates: Requirements 5.2**
 
-  - [ ]* 6.4 Write property test for tag filtering
+  - [x]* 6.4 Write property test for tag filtering
     - **Property 6: Tag filtering returns exactly the tasks matching all selected tags** — superset match; empty selection returns all.
     - **Validates: Requirements 6.1, 6.2, 6.3**
 
@@ -96,15 +96,15 @@ Every property test is tagged with the comment format:
     - In `src/domain/habits.ts`, implement `createHabit` (trimmed name, given frequency, empty `completions`), `checkOffHabit` (add day iff absent — idempotent), `uncheckHabit` (remove day if present, else no-op), and `isCompletedOn`.
     - _Requirements: 7.1, 8.1, 8.2, 8.3, 8.4_
 
-  - [ ]* 7.2 Write property test for habit creation
+  - [x]* 7.2 Write property test for habit creation
     - **Property 9: Habit creation adds a habit with empty history** — appends habit with trimmed name, frequency, empty `completions`.
     - **Validates: Requirements 7.1**
 
-  - [ ]* 7.3 Write property test for check-off idempotence
+  - [x]* 7.3 Write property test for check-off idempotence
     - **Property 10: Check-off is idempotent (exactly one record per day)** — once vs twice yield equal histories; exactly one entry for the date.
     - **Validates: Requirements 8.1, 8.2**
 
-  - [ ]* 7.4 Write property test for check/uncheck identity
+  - [x]* 7.4 Write property test for check/uncheck identity
     - **Property 11: Check-off then uncheck is the identity on completion history** — `uncheck(check(habit, day), day)` equals original set; uncheck of absent day is unchanged.
     - **Validates: Requirements 8.3, 8.4**
 
@@ -113,7 +113,7 @@ Every property test is tagged with the comment format:
     - In `src/domain/streaks.ts`, implement `currentStreak(habit, today)` as the maximal consecutive run of completed days ending on and including `today`, returning 0 when `today` has no record.
     - _Requirements: 9.1, 9.2_
 
-  - [ ]* 8.2 Write property test for current streak
+  - [x]* 8.2 Write property test for current streak
     - **Property 12: Current streak equals the consecutive run ending today** — equals maximal consecutive run ending today; 0 when today missing.
     - **Validates: Requirements 9.1, 9.2**
 
@@ -122,19 +122,19 @@ Every property test is tagged with the comment format:
     - In `src/domain/stats.ts`, implement `tasksCompletedOn` (count `completedAt` on `day` local), `tasksCompletedInWeekOf` (count within Monday–Sunday week using `weekRange`), and `completionRate` (integer `round(daysCompletedInLast7 / 7 * 100)`, 0..100).
     - _Requirements: 10.1, 10.2, 10.3, 11.2_
 
-  - [ ]* 9.2 Write property test for daily task count
+  - [x]* 9.2 Write property test for daily task count
     - **Property 13: Daily task count matches tasks completed on that day** — equals count of tasks whose `completedAt` falls on `day` local; 0 when none.
     - **Validates: Requirements 10.1, 10.3**
 
-  - [ ]* 9.3 Write property test for weekly task count
+  - [x]* 9.3 Write property test for weekly task count
     - **Property 14: Weekly task count matches the Monday-start week of today** — equals count within the Monday–Sunday week containing `day`; 0 when none.
     - **Validates: Requirements 10.2, 10.3**
 
-  - [ ]* 9.4 Write property test for completion rate
+  - [x]* 9.4 Write property test for completion rate
     - **Property 15: Completion rate is a whole percent within 0–100** — integer 0..100 equal to `round(daysCompletedInLast7 / 7 * 100)`.
     - **Validates: Requirements 11.2**
 
-  - [ ]* 9.5 Write unit tests for empty statistics
+  - [x]* 9.5 Write unit tests for empty statistics
     - Assert daily/weekly counts and completion rate are 0 when no completions fall in the period.
     - _Requirements: 10.3_
 
@@ -146,15 +146,15 @@ Every property test is tagged with the comment format:
     - In `src/storage/storage.ts`, implement `saveState` (serialize `AppState` to `localStorage`, try/catch write failures → `{ ok:false, warning }`, leaving in-memory state untouched) and `loadState` (read + `JSON.parse` + schema/version validation, returning `{ state, warning }`; on any failure return `EMPTY_STATE` with a non-null warning).
     - _Requirements: 12.1, 12.2, 13.1, 13.2_
 
-  - [ ]* 11.2 Write property test for save/load roundtrip
+  - [x]* 11.2 Write property test for save/load roundtrip
     - **Property 16: Save/load roundtrip preserves application state** — `loadState()` after `saveState(state)` deep-equals the original.
     - **Validates: Requirements 13.1**
 
-  - [ ]* 11.3 Write property test for corrupt-data handling
+  - [x]* 11.3 Write property test for corrupt-data handling
     - **Property 17: Corrupt stored data yields empty state with a warning** — non-JSON or schema-invalid stored strings → `EMPTY_STATE` with a non-null warning.
     - **Validates: Requirements 13.2**
 
-  - [ ]* 11.4 Write unit tests for storage failures
+  - [x]* 11.4 Write unit tests for storage failures
     - Test `loadState` on hand-crafted corrupt payloads (non-JSON, wrong `version`, missing fields) and a `setItem` that throws (write failure returns a warning without mutating state).
     - _Requirements: 12.2, 13.2_
 
@@ -163,7 +163,7 @@ Every property test is tagged with the comment format:
     - In `src/state/appReducer.ts`, define `AppAction` and implement `appReducer(state, action)` delegating to domain functions for `CREATE_TASK`, `EDIT_TASK`, `COMPLETE_TASK`, `DELETE_TASK`, `ADD_TAG`, `CREATE_HABIT`, `CHECK_HABIT`, `UNCHECK_HABIT`, and `HYDRATE`. The reducer is pure, never throws, and returns the input state unchanged on invalid mutations.
     - _Requirements: 1.1, 2.1, 3.1, 4.2, 5.1, 7.1, 8.1, 8.3, 13.1_
 
-  - [ ]* 12.2 Write unit tests for appReducer
+  - [x]* 12.2 Write unit tests for appReducer
     - Test each action produces the expected next state and that invalid mutations (e.g., empty title, duplicate tag) leave state unchanged; test `HYDRATE` replaces state.
     - _Requirements: 1.1, 2.1, 3.1, 4.2, 5.1, 7.1, 8.1, 8.3_
 

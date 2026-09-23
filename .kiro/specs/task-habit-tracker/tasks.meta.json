@@ -482,6 +482,167 @@
         "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
         "timestamp": 1790128980675
       }
+    ],
+    "3.2 Write unit tests for dateUtils": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137089009
+      }
+    ],
+    "4.2 Write property test for title validation": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137090009
+      }
+    ],
+    "4.3 Write property test for due-date validation": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137090816
+      }
+    ],
+    "4.4 Write unit tests for validation boundaries": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137092262
+      }
+    ],
+    "5.2 Write property test for task creation": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137093163
+      }
+    ],
+    "5.3 Write property test for task completion": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137094115
+      }
+    ],
+    "5.4 Write property test for task deletion": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137095568
+      }
+    ],
+    "5.5 Write property test for edit title validity": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137096862
+      }
+    ],
+    "6.2 Write property test for tag-add semantics": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137097916
+      }
+    ],
+    "6.3 Write property test for available tags": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137098847
+      }
+    ],
+    "6.4 Write property test for tag filtering": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137100270
+      }
+    ],
+    "7.2 Write property test for habit creation": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137101163
+      }
+    ],
+    "7.3 Write property test for check-off idempotence": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137102613
+      }
+    ],
+    "7.4 Write property test for check/uncheck identity": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137103591
+      }
+    ],
+    "8.2 Write property test for current streak": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137105406
+      }
+    ],
+    "9.2 Write property test for daily task count": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137105940
+      }
+    ],
+    "9.3 Write property test for weekly task count": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137107317
+      }
+    ],
+    "9.4 Write property test for completion rate": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137108265
+      }
+    ],
+    "9.5 Write unit tests for empty statistics": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137109677
+      }
+    ],
+    "11.2 Write property test for save/load roundtrip": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137110695
+      }
+    ],
+    "11.3 Write property test for corrupt-data handling": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137112032
+      }
+    ],
+    "11.4 Write unit tests for storage failures": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137112966
+      }
+    ],
+    "12.2 Write unit tests for appReducer": [
+      {
+        "executionId": "183f3cc7-69de-4dbe-8fa0-42e0e1eb8f74",
+        "chatSessionId": "sess_528d9526-0b40-45da-9dad-d399494e1408",
+        "timestamp": 1790137114244
+      }
     ]
   }
 }
