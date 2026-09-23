@@ -1,3 +1,8 @@
+---
+name: "architecture"
+description: "Layered architecture of the Task & Habit Tracker and the rules for changing it."
+---
+
 # Architecture
 
 The Task & Habit Tracker is a single-user, fully client-side React + TypeScript

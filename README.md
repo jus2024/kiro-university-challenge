@@ -110,21 +110,23 @@ comment, tying the tests back to the spec.
 
 `.kiro/powers/task-habit-tracker-frontend/` is a project-specific Kiro Power that
 loads on-demand context when working on this app. It follows the standard Power
-layout — a `plugin.json` manifest, `skills/` (architecture, domain rules, and
-frontend conventions), and an `mcp.json` bundling the project's MCP servers. It
-was authored for this project (inspired by community React/MCP powers) rather than
-installed from a third party, so its contents are reviewed and trusted.
+layout — a `POWER.md` manifest (with front-matter for name, description, and
+keywords), `steering/` files (architecture, domain rules, and frontend
+conventions), and an `mcp.json` bundling a `fetch` MCP server. It was authored for
+this project (inspired by community React/MCP powers) rather than installed from a
+third party, so its contents are reviewed and trusted.
 
 ### Lesson 6 — Model Context Protocol (MCP)
 
-`.kiro/settings/mcp.json` registers two MCP servers used during development, both
-launched with `uvx`:
+Two MCP servers are used during development, each registered where it fits best:
 
-- `fetch` (`mcp-server-fetch`) — retrieve up-to-date documentation from URLs.
-- `git` (`mcp-server-git`) — read local repository status, history, and diffs.
+- `fetch` (`mcp-server-fetch`) — bundled inside the Lesson 5 Power's `mcp.json`,
+  demonstrating that a Power can package its own tools.
+- `git` (`mcp-server-git`) — registered at the workspace level in
+  `.kiro/settings/mcp.json`, where it runs at the repository root so its
+  `--repository .` resolves correctly.
 
-The same servers are also bundled inside the Lesson 5 Power's `mcp.json`, so the
-Power packages its own tools. `autoApprove` is limited to read-only operations.
+Both are launched with `uvx`; `autoApprove` is limited to read-only operations.
 
 ## License
 

@@ -1,3 +1,8 @@
+---
+name: "frontend-conventions"
+description: "Component, form/validation, accessibility, and styling patterns for the Task & Habit Tracker UI."
+---
+
 # Frontend Conventions
 
 How to build UI for the Task & Habit Tracker. This complements the always-on

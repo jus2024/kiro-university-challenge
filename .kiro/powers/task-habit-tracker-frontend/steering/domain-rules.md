@@ -1,3 +1,8 @@
+---
+name: "domain-rules"
+description: "Business rules for tasks, tags, habits, streaks, and statistics in the Task & Habit Tracker."
+---
+
 # Domain Rules
 
 Business rules for the Task & Habit Tracker domain. These mirror the requirements

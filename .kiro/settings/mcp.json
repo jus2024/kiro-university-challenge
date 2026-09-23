@@ -1,11 +1,5 @@
 {
   "mcpServers": {
-    "fetch": {
-      "command": "uvx",
-      "args": ["mcp-server-fetch"],
-      "disabled": false,
-      "autoApprove": ["fetch"]
-    },
     "git": {
       "command": "uvx",
       "args": ["mcp-server-git", "--repository", "."],
