@@ -5,7 +5,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import fc from 'fast-check';
 import { EMPTY_STATE, type AppState, type Habit, type Task } from '../domain/types';
-import { saveState, loadState } from './storage';
+import { saveState, loadState, isValidAppState } from './storage';
 
 const STORAGE_KEY = 'task-habit-tracker/state';
 
@@ -166,5 +166,69 @@ describe('saveState write failure (Task 11.4, R12.2)', () => {
     spy.mockRestore();
     // In-memory state is untouched (the caller still holds the same object).
     expect(state).toEqual({ version: 1, tasks: [], habits: [] });
+  });
+});
+
+// --- Task 1.1 (data-export-import): unit tests for the exported validator ---
+// Assert isValidAppState accepts EMPTY_STATE and a populated valid AppState,
+// and rejects a wrong version, a malformed task, and a malformed habit
+// (Requirements 4.1, 4.2).
+
+describe('isValidAppState (data-export-import Task 1.1, R4.1/R4.2)', () => {
+  const validTask: Task = {
+    id: 'task-1',
+    title: 'Write tests',
+    dueDate: '2024-06-03',
+    tags: ['work', 'urgent'],
+    status: 'done',
+    completedAt: 1_700_000_000_000,
+    createdAt: 1_699_000_000_000,
+  };
+
+  const validHabit: Habit = {
+    id: 'habit-1',
+    name: 'Exercise',
+    targetFrequency: 'daily',
+    completions: ['2024-06-01', '2024-06-02'],
+    createdAt: 1_699_000_000_000,
+  };
+
+  it('accepts EMPTY_STATE', () => {
+    expect(isValidAppState(EMPTY_STATE)).toBe(true);
+  });
+
+  it('accepts a populated valid AppState', () => {
+    const state: AppState = { version: 1, tasks: [validTask], habits: [validHabit] };
+    expect(isValidAppState(state)).toBe(true);
+  });
+
+  it('rejects a wrong version', () => {
+    const state = { version: 2, tasks: [], habits: [] };
+    expect(isValidAppState(state)).toBe(false);
+  });
+
+  it('rejects a malformed task (missing status)', () => {
+    const badTask = {
+      id: 'task-1',
+      title: 'No status',
+      dueDate: null,
+      tags: [],
+      completedAt: null,
+      createdAt: 0,
+    };
+    const state = { version: 1, tasks: [badTask], habits: [] };
+    expect(isValidAppState(state)).toBe(false);
+  });
+
+  it('rejects a malformed habit (invalid targetFrequency)', () => {
+    const badHabit = {
+      id: 'habit-1',
+      name: 'Weekly thing',
+      targetFrequency: 'weekly',
+      completions: [],
+      createdAt: 0,
+    };
+    const state = { version: 1, tasks: [], habits: [badHabit] };
+    expect(isValidAppState(state)).toBe(false);
   });
 });

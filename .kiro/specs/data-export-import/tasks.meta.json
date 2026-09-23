@@ -1,0 +1,315 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1.1 Write unit tests for the exported validator": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171803
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170236150
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170295080
+      }
+    ],
+    "2.1 Implement dataTransfer functions and constants": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171841
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170236317
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170296733
+      }
+    ],
+    "2.2 Write property test for export/import round-trip": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171870
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170302488
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170388963
+      }
+    ],
+    "2.3 Write property test for non-JSON rejection": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171903
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170303430
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170390834
+      }
+    ],
+    "2.4 Write property test for schema/version-invalid rejection": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171940
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170304856
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170391298
+      }
+    ],
+    "2.5 Write property test for export filename format": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171966
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170305786
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170392703
+      }
+    ],
+    "2.6 Write property test for import/storage validation equivalence": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170171998
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170306947
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170393539
+      }
+    ],
+    "2.7 Write unit tests for dataTransfer examples and boundaries": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172024
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170399405
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170635546
+      }
+    ],
+    "3.1 Implement DataTransferBar": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172056
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170400339
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170637088
+      }
+    ],
+    "3.2 Write component tests for export": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172084
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170650397
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172448120
+      }
+    ],
+    "3.3 Write component tests for the import confirm path": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172115
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170651285
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172449523
+      }
+    ],
+    "3.4 Write component tests for import into an empty workspace": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172148
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170652737
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172450481
+      }
+    ],
+    "3.5 Write component tests for invalid/oversize import files": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172176
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170653639
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172451886
+      }
+    ],
+    "3.6 Write accessibility component tests": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172207
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170654771
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172452697
+      }
+    ],
+    "4.1 Write integration tests for state replacement and persistence": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172234
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172534700
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172827552
+      }
+    ],
+    "5. Final checkpoint - full suite green": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170172268
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172832361
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172873314
+      }
+    ],
+    "1. Promote the storage schema validator to a named export": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170189520
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170295130
+      }
+    ],
+    "2. Implement the pure data-transfer domain module": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790170635608
+      }
+    ],
+    "3. Implement the DataTransferBar UI component": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172452752
+      }
+    ],
+    "4. Mount DataTransferBar into the App composition": [
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172463852
+      },
+      {
+        "executionId": "88cd3d5b-53e6-40a2-83be-7f4c8fdb5815",
+        "chatSessionId": "sess_523371d0-8ea0-4249-bb9b-e8ea81e215e1",
+        "timestamp": 1790172827595
+      }
+    ]
+  }
+}

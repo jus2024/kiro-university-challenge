@@ -14,13 +14,18 @@
 //     point on `TaskList` sets it, revealing an edit-mode `TaskForm` that clears
 //     the selection once the edit is submitted (R3.2).
 // Every feature component is composed here so none are orphaned: AppProvider,
-// WarningBanner, TaskForm, TagFilterBar, TaskList, HabitForm, HabitList, and
-// ProgressView (R6.1, R10.1, R11.1, R12.1, R13.1).
+// WarningBanner, DataTransferBar, TaskForm, TagFilterBar, TaskList, HabitForm,
+// HabitList, and ProgressView (R6.1, R10.1, R11.1, R12.1, R13.1).
+//
+// DataTransferBar (data-export-import feature) mounts as a header toolbar,
+// placed in DOM order right after the title so its export/import controls sit
+// early in the tab order matching their visual reading order (R5.1).
 
 import { useState } from 'react';
 import { AppProvider, useApp } from './state/AppContext';
 import { availableTags, filterTasksByTags } from './domain/tags';
 import { WarningBanner } from './components/WarningBanner';
+import { DataTransferBar } from './components/DataTransferBar';
 import TaskForm from './components/TaskForm';
 import { TagFilterBar } from './components/TagFilterBar';
 import TaskList from './components/TaskList';
@@ -62,6 +67,10 @@ function AppContent(): JSX.Element {
           <p className="mt-1 text-sm text-slate-500">
             Capture tasks, build habits, and track your progress.
           </p>
+
+          <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center">
+            <DataTransferBar />
+          </div>
         </header>
 
         <WarningBanner />

@@ -70,13 +70,17 @@ capability per lesson. Everything is configured under the `.kiro/` directory.
 
 ### Lesson 1 — Spec-driven development
 
-The feature was developed with Kiro's spec workflow. The spec lives in
-`.kiro/specs/task-habit-tracker/`:
+Features were developed with Kiro's spec workflow. Each spec captures
+requirements, design, and an incremental task plan:
 
-- `requirements.md` — requirements written in EARS notation, with a glossary.
-- `design.md` — architecture, data models, 17 correctness properties, and the
-  testing strategy.
-- `tasks.md` — the incremental implementation plan.
+- `.kiro/specs/task-habit-tracker/` — the core feature.
+  - `requirements.md` — requirements in EARS notation, with a glossary.
+  - `design.md` — architecture, data models, 17 correctness properties, and the
+    testing strategy.
+  - `tasks.md` — the incremental implementation plan.
+- `.kiro/specs/data-export-import/` — a follow-on spec adding JSON backup/restore
+  (export to a file, validated import that reuses the storage schema, and a
+  round-trip correctness property), built on the same architecture.
 
 ### Lesson 2 — Steering documents
 

@@ -94,7 +94,7 @@ function getLocalStorage(): Storage {
 
 // --- Schema validation ---
 
-function isValidAppState(value: unknown): value is AppState {
+export function isValidAppState(value: unknown): value is AppState {
   if (!isRecord(value)) return false;
   if (value.version !== 1) return false;
   if (!Array.isArray(value.tasks) || !value.tasks.every(isValidTask)) return false;
