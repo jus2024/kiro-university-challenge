@@ -23,6 +23,8 @@ This project is built with [Kiro](https://kiro.dev) as part of the
 
 - [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vite.dev/) for the dev server and build
+- [Tailwind CSS v4](https://tailwindcss.com/) (via the `@tailwindcss/vite` plugin)
+  for styling
 - Browser `localStorage` for persistence
 - [Vitest](https://vitest.dev/) with [fast-check](https://fast-check.dev/) and
   [Testing Library](https://testing-library.com/) for tests
@@ -61,14 +63,44 @@ npm run build
 npm test
 ```
 
-## Spec-Driven Development
+## Built with Kiro
 
-This feature was developed with Kiro's spec workflow. The spec lives in
+This project was built for the Kiro University Challenge, applying one Kiro
+capability per lesson. Everything is configured under the `.kiro/` directory.
+
+### Lesson 1 — Spec-driven development
+
+The feature was developed with Kiro's spec workflow. The spec lives in
 `.kiro/specs/task-habit-tracker/`:
 
 - `requirements.md` — requirements written in EARS notation, with a glossary.
-- `design.md` — architecture, data models, correctness properties, and testing strategy.
+- `design.md` — architecture, data models, 17 correctness properties, and the
+  testing strategy.
 - `tasks.md` — the incremental implementation plan.
+
+### Lesson 2 — Steering documents
+
+`.kiro/steering/ui-ux-standards.md` is a steering file that keeps frontend work
+consistent without repeating instructions. It defines accessibility (WCAG 2.1 AA),
+responsive mobile-first, and interaction-consistency standards, each with a
+rationale and good-vs-bad code examples. It is scoped to frontend files via
+`fileMatch` so the standards surface when editing `.tsx`/`.ts`/`.css`. Tailwind
+CSS was adopted alongside these standards to restyle the UI.
+
+### Lesson 3 — Hooks
+
+`.kiro/hooks/test-on-save.json` is an agent hook that runs the Vitest suite on
+every TypeScript/TSX file save (a `PostFileSave` trigger). It automates test
+execution so the property-based and unit tests stay green as the code changes.
+
+### Lesson 4 — Property-based testing
+
+The 17 correctness properties defined in `design.md` are implemented as
+property-based tests with [fast-check](https://fast-check.dev/) (at least 100
+runs each), co-located with the domain and storage modules they target
+(`src/domain/*.test.ts`, `src/storage/storage.test.ts`). Each test references
+its design property via a `// Feature: task-habit-tracker, Property {n}: ...`
+comment, tying the tests back to the spec.
 
 ## License
 
