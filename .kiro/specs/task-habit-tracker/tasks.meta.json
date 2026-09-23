@@ -1,0 +1,487 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold project and test tooling": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233127
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127243500
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127683921
+      }
+    ],
+    "2.1 Create domain types module": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233181
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127687595
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127752712
+      }
+    ],
+    "3.1 Implement dateUtils": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233216
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127756755
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127829738
+      }
+    ],
+    "4.1 Implement validation functions": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233260
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127834857
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127915371
+      }
+    ],
+    "5.1 Implement task operations": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233307
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127931713
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128031538
+      }
+    ],
+    "6.1 Implement tag operations": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233339
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127932534
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128032754
+      }
+    ],
+    "7.1 Implement habit operations": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233367
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127933966
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128033691
+      }
+    ],
+    "8.1 Implement currentStreak": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233399
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127934883
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128035180
+      }
+    ],
+    "9.1 Implement stats functions": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233439
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127935910
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128035863
+      }
+    ],
+    "10. Checkpoint - domain layer complete": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233467
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128041611
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128079039
+      }
+    ],
+    "11.1 Implement loadState and saveState": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233505
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127835506
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127916239
+      }
+    ],
+    "12.1 Implement appReducer": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233545
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128083922
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128167582
+      }
+    ],
+    "12.3 Implement AppContext and useApp": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233579
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128171967
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128234157
+      }
+    ],
+    "13.1 Implement TaskForm": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233608
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128239907
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128381128
+      }
+    ],
+    "13.3 Implement TaskList, TaskItem, and ConfirmDialog": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233640
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128241304
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128378777
+      }
+    ],
+    "13.5 Implement TagFilterBar": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233673
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128242741
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128377929
+      }
+    ],
+    "14.1 Implement HabitForm": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233724
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128243656
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128382143
+      }
+    ],
+    "14.3 Implement HabitList and HabitItem": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233756
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128244615
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128380270
+      }
+    ],
+    "14.5 Implement ProgressView": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233783
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128387277
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128468244
+      }
+    ],
+    "14.7 Implement WarningBanner": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233815
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128387920
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128468500
+      }
+    ],
+    "15.1 Implement AppProvider with persistence effects": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233849
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128474082
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128603555
+      }
+    ],
+    "15.3 Assemble App": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233882
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128607824
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128980618
+      }
+    ],
+    "16. Final checkpoint - full suite green": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127233914
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128985814
+      },
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790129006437
+      }
+    ],
+    "2. Define core data models and shared types": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127752758
+      }
+    ],
+    "3. Implement date and week utilities": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127829783
+      }
+    ],
+    "4. Implement input validation": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127915418
+      }
+    ],
+    "11. Implement the storage layer": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790127916274
+      }
+    ],
+    "5. Implement task lifecycle domain functions": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128031586
+      }
+    ],
+    "6. Implement tag association and filtering": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128032803
+      }
+    ],
+    "7. Implement habit lifecycle and completion toggling": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128033741
+      }
+    ],
+    "8. Implement streak calculation": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128035218
+      }
+    ],
+    "9. Implement progress statistics": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128035907
+      }
+    ],
+    "12. Implement the state layer (reducer + context)": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128234207
+      }
+    ],
+    "13. Implement task and tag UI components": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128381170
+      }
+    ],
+    "14. Implement habit and progress UI components": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128468553
+      }
+    ],
+    "15. Wire persistence and assemble the App": [
+      {
+        "executionId": "c58d8fd0-f1f2-4019-a627-0645ac1d85c3",
+        "chatSessionId": "sess_eba26041-590a-41aa-ac5a-1137e93f0a99",
+        "timestamp": 1790128980675
+      }
+    ]
+  }
+}
