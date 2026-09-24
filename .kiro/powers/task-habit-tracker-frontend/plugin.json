@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "task-habit-tracker-frontend",
+  "version": "1.0.0",
+  "description": "Project-specific knowledge for the Task & Habit Tracker: its layered architecture, domain rules, spec-driven workflow, and accessible, responsive React + Tailwind UI conventions.",
+  "author": {
+    "name": "jus2024",
+    "url": "https://github.com/jus2024"
+  },
+  "homepage": "https://github.com/jus2024/task-habit-tracker-frontend-power",
+  "repository": "https://github.com/jus2024/task-habit-tracker-frontend-power",
+  "license": "MIT",
+  "keywords": [
+    "task-habit-tracker",
+    "tracker",
+    "habit",
+    "task",
+    "streak",
+    "react",
+    "typescript",
+    "tailwind",
+    "accessibility",
+    "property-based-test",
+    "fast-check"
+  ]
+}

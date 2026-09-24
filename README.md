@@ -109,12 +109,12 @@ comment, tying the tests back to the spec.
 ### Lesson 5 — Powers
 
 `.kiro/powers/task-habit-tracker-frontend/` is a project-specific Kiro Power that
-loads on-demand context when working on this app. It follows the standard Power
-layout — a `POWER.md` manifest (with front-matter for name, description, and
-keywords), `steering/` files (architecture, domain rules, and frontend
-conventions), and an `mcp.json` bundling a `fetch` MCP server. It was authored for
-this project (inspired by community React/MCP powers) rather than installed from a
-third party, so its contents are reviewed and trusted.
+loads on-demand context when working on this app. It ships a `plugin.json` manifest
+(conforming to the Agent Plugins 1.0.0 schema), a `POWER.md` overview, `steering/`
+files (architecture, domain rules, and frontend conventions), and an `mcp.json`
+bundling a `fetch` MCP server. It was authored for this project (inspired by
+community React/MCP powers) rather than installed from a third party, so its
+contents are reviewed and trusted.
 
 ### Lesson 6 — Model Context Protocol (MCP)
 
@@ -138,6 +138,14 @@ capability-based `permissions` that pre-approve `npm`/`git` work while gating
 destructive commands (`git push`, `rm`, `git reset`) behind an `ask` prompt. Its
 `prompt` encodes the project's architecture, domain rules, and testing conventions.
 Hooks stay in `.kiro/hooks/` since the IDE ignores agents that embed hooks.
+
+### Bonus Lesson 2 — Package a Kiro power
+
+The Lesson 5 Power is also published as a standalone public repository so it can be
+shared and installed on its own:
+[jus2024/task-habit-tracker-frontend-power](https://github.com/jus2024/task-habit-tracker-frontend-power).
+Its `plugin.json` conforms to the Agent Plugins 1.0.0 manifest schema
+(`$schema` + `name`), and the repo carries an MIT license.
 
 ## License
 
