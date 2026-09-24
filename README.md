@@ -128,6 +128,17 @@ Two MCP servers are used during development, each registered where it fits best:
 
 Both are launched with `uvx`; `autoApprove` is limited to read-only operations.
 
+### Lesson 7 — Custom agents
+
+`.kiro/agents/tracker-dev.json` is a purpose-built agent for this project that ties
+the previous lessons together. It loads both specs and the UI/UX steering as
+`resources` (Lessons 1–2), pulls in the project Power via `includePowers` (Lesson
+5) and the workspace MCP servers via `includeMcpJson` (Lesson 6), and defines
+capability-based `permissions` that pre-approve `npm`/`git` work while gating
+destructive commands (`git push`, `rm`, `git reset`) behind an `ask` prompt. Its
+`prompt` encodes the project's architecture, domain rules, and testing conventions.
+Hooks stay in `.kiro/hooks/` since the IDE ignores agents that embed hooks.
+
 ## License
 
 This project was created for the Kiro University Challenge.
