@@ -147,6 +147,15 @@ shared and installed on its own:
 Its `plugin.json` conforms to the Agent Plugins 1.0.0 manifest schema
 (`$schema` + `name`), and the repo carries an MIT license.
 
+### Bonus Lesson 1 — Kiro Web, cloud sessions, and cloud configuration
+
+Part of this project was built in the cloud. The reopen-task feature (undo a
+completed task) was implemented in a Kiro **cloud session** on Kiro Web, which
+opened [PR #1](https://github.com/jus2024/kiro-university-challenge/pull/1) from a
+`feature/reopen-task` branch. The local `.kiro` configuration (steering, agents,
+hooks, settings) was uploaded via **cloud configuration** (Configuration Sync) so
+the cloud session used the same setup built locally.
+
 ## License
 
 This project was created for the Kiro University Challenge.

@@ -108,46 +108,43 @@ describe('completeTask', () => {
   });
 });
 
-// --- Property 9 (reopen) ---
+// --- Property 18-20 (reopen) ---
 
 describe('reopenTask', () => {
-  // Feature: task-habit-tracker, Property 9: Reopening a task clears completion, is idempotent, and touches only the target
-  it('Property 9: reopen sets status open + completedAt null when done, no-ops when open, and never changes other tasks', () => {
+  // Feature: task-habit-tracker, Property 18: Reopening a task clears completion, is idempotent, and touches only the target
+  it('Property 18: reopen sets status open + completedAt null when done, no-ops when open, and never changes other tasks', () => {
     fc.assert(
-      fc.property(arbState, (state) => {
+      fc.property(arbState, fc.nat(), (state, rawIdx) => {
+        // Skip empty states; otherwise pick a task by a bounded index.
         fc.pre(state.tasks.length > 0);
-        return fc.assert(
-          fc.property(fc.nat(state.tasks.length - 1), (idx) => {
-            const target = state.tasks[idx];
-            const next = reopenTask(state, target.id);
+        const idx = rawIdx % state.tasks.length;
+        const target = state.tasks[idx];
+        const next = reopenTask(state, target.id);
 
-            if (target.status === 'open') {
-              // Idempotent: already-open task leaves the state unchanged.
-              expect(next).toBe(state);
-            } else {
-              // Done -> open: status flips and the completion stamp is cleared.
-              const updated = next.tasks.find((t) => t.id === target.id)!;
-              expect(updated.status).toBe('open');
-              expect(updated.completedAt).toBeNull();
-            }
+        if (target.status === 'open') {
+          // Idempotent: already-open task leaves the state unchanged.
+          expect(next).toBe(state);
+        } else {
+          // Done -> open: status flips and the completion stamp is cleared.
+          const updated = next.tasks.find((t) => t.id === target.id)!;
+          expect(updated.status).toBe('open');
+          expect(updated.completedAt).toBeNull();
+        }
 
-            // Every other task is left exactly as it was.
-            for (const other of state.tasks) {
-              if (other.id !== target.id) {
-                expect(next.tasks).toContainEqual(other);
-              }
-            }
-            // The task count never changes.
-            expect(next.tasks.length).toBe(state.tasks.length);
-          }),
-          { numRuns: 5 },
-        );
+        // Every other task is left exactly as it was.
+        for (const other of state.tasks) {
+          if (other.id !== target.id) {
+            expect(next.tasks).toContainEqual(other);
+          }
+        }
+        // The task count never changes.
+        expect(next.tasks.length).toBe(state.tasks.length);
       }),
     );
   });
 
-  // Feature: task-habit-tracker, Property 10: Complete-then-reopen round-trip yields an open task with no completion stamp
-  it('Property 10: completing then reopening a task yields status open with completedAt null', () => {
+  // Feature: task-habit-tracker, Property 19: Complete-then-reopen round-trip yields an open task with no completion stamp
+  it('Property 19: completing then reopening a task yields status open with completedAt null', () => {
     fc.assert(
       fc.property(
         arbState,
@@ -176,8 +173,8 @@ describe('reopenTask', () => {
     );
   });
 
-  // Feature: task-habit-tracker, Property 11: Reopening an unknown task id leaves state unchanged
-  it('Property 11: reopening a non-existent task id returns the input state unchanged', () => {
+  // Feature: task-habit-tracker, Property 20: Reopening an unknown task id leaves state unchanged
+  it('Property 20: reopening a non-existent task id returns the input state unchanged', () => {
     fc.assert(
       fc.property(arbState, (state) => {
         const next = reopenTask(state, 'no-such-id');
