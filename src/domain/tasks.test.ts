@@ -5,7 +5,7 @@
 import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
 import type { AppState, Task } from './types';
-import { createTask, completeTask, deleteTask, editTask } from './tasks';
+import { createTask, completeTask, deleteTask, editTask, reopenTask } from './tasks';
 
 // --- Generators ---
 
@@ -104,6 +104,85 @@ describe('completeTask', () => {
           expect(stillDone.completedAt).toBe(now);
         },
       ),
+    );
+  });
+});
+
+// --- Property 9 (reopen) ---
+
+describe('reopenTask', () => {
+  // Feature: task-habit-tracker, Property 9: Reopening a task clears completion, is idempotent, and touches only the target
+  it('Property 9: reopen sets status open + completedAt null when done, no-ops when open, and never changes other tasks', () => {
+    fc.assert(
+      fc.property(arbState, (state) => {
+        fc.pre(state.tasks.length > 0);
+        return fc.assert(
+          fc.property(fc.nat(state.tasks.length - 1), (idx) => {
+            const target = state.tasks[idx];
+            const next = reopenTask(state, target.id);
+
+            if (target.status === 'open') {
+              // Idempotent: already-open task leaves the state unchanged.
+              expect(next).toBe(state);
+            } else {
+              // Done -> open: status flips and the completion stamp is cleared.
+              const updated = next.tasks.find((t) => t.id === target.id)!;
+              expect(updated.status).toBe('open');
+              expect(updated.completedAt).toBeNull();
+            }
+
+            // Every other task is left exactly as it was.
+            for (const other of state.tasks) {
+              if (other.id !== target.id) {
+                expect(next.tasks).toContainEqual(other);
+              }
+            }
+            // The task count never changes.
+            expect(next.tasks.length).toBe(state.tasks.length);
+          }),
+          { numRuns: 5 },
+        );
+      }),
+    );
+  });
+
+  // Feature: task-habit-tracker, Property 10: Complete-then-reopen round-trip yields an open task with no completion stamp
+  it('Property 10: completing then reopening a task yields status open with completedAt null', () => {
+    fc.assert(
+      fc.property(
+        arbState,
+        newTaskInput,
+        fc.integer({ min: 0, max: 1_000_000_000_000 }),
+        (state, input, now) => {
+          // Create a fresh open task so we know its id.
+          const withTask = createTask(state, input);
+          const created = withTask.tasks[withTask.tasks.length - 1];
+
+          const completed = completeTask(withTask, created.id, now);
+          const done = completed.tasks.find((t) => t.id === created.id)!;
+          expect(done.status).toBe('done');
+          expect(done.completedAt).toBe(now);
+
+          const reopened = reopenTask(completed, created.id);
+          const open = reopened.tasks.find((t) => t.id === created.id)!;
+          expect(open.status).toBe('open');
+          expect(open.completedAt).toBeNull();
+
+          // Reopening again is a no-op (already open).
+          const again = reopenTask(reopened, created.id);
+          expect(again).toBe(reopened);
+        },
+      ),
+    );
+  });
+
+  // Feature: task-habit-tracker, Property 11: Reopening an unknown task id leaves state unchanged
+  it('Property 11: reopening a non-existent task id returns the input state unchanged', () => {
+    fc.assert(
+      fc.property(arbState, (state) => {
+        const next = reopenTask(state, 'no-such-id');
+        expect(next).toBe(state);
+      }),
     );
   });
 });

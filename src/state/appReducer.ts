@@ -9,7 +9,7 @@
 // the state carried by the action (used to restore persisted state on load).
 
 import type { AppState, DateKey, NewHabitInput, NewTaskInput, TaskPatch } from '../domain/types';
-import { completeTask, createTask, deleteTask, editTask } from '../domain/tasks';
+import { completeTask, createTask, deleteTask, editTask, reopenTask } from '../domain/tasks';
 import { addTagToTask } from '../domain/tags';
 import { checkOffHabit, createHabit, uncheckHabit } from '../domain/habits';
 
@@ -18,6 +18,7 @@ export type AppAction =
   | { type: 'CREATE_TASK'; input: NewTaskInput }
   | { type: 'EDIT_TASK'; taskId: string; patch: TaskPatch }
   | { type: 'COMPLETE_TASK'; taskId: string; now: number }
+  | { type: 'REOPEN_TASK'; taskId: string }
   | { type: 'DELETE_TASK'; taskId: string }
   | { type: 'ADD_TAG'; taskId: string; tagName: string }
   | { type: 'CREATE_HABIT'; input: NewHabitInput }
@@ -41,6 +42,8 @@ export function appReducer(state: AppState, action: AppAction): AppState {
       return editTask(state, action.taskId, action.patch);
     case 'COMPLETE_TASK':
       return completeTask(state, action.taskId, action.now);
+    case 'REOPEN_TASK':
+      return reopenTask(state, action.taskId);
     case 'DELETE_TASK':
       return deleteTask(state, action.taskId);
     case 'ADD_TAG':
