@@ -1,9 +1,11 @@
 // Feature: task-habit-tracker
 // UI: a single task row with complete, edit, and delete controls.
 //
-// `TaskItem` renders a task's details and its three actions. The complete and
-// delete triggers are native `<button>`s (R14.3). Completing dispatches
-// `COMPLETE_TASK` with a timestamp captured at the edge (R2.1). Deleting does
+// `TaskItem` renders a task's details and its actions. The complete/reopen and
+// delete triggers are native `<button>`s (R14.3). An open task shows a Complete
+// button that dispatches `COMPLETE_TASK` with a timestamp captured at the edge
+// (R2.1); a done task instead shows a Reopen button that dispatches
+// `REOPEN_TASK` to undo completion (moving it back to "open"). Deleting does
 // not remove anything directly: it opens a `ConfirmDialog`, and only a confirm
 // dispatches `DELETE_TASK` (R4.1, R4.2); cancel closes the dialog with no
 // dispatch, leaving the task in place (R4.4). Editing is surfaced through an
@@ -48,6 +50,11 @@ export default function TaskItem({ task, onEdit }: TaskItemProps) {
   function handleComplete() {
     // Capture the timestamp at the edge; the domain stamps it once (R2.1, R2.4).
     dispatch({ type: 'COMPLETE_TASK', taskId: task.id, now: Date.now() });
+  }
+
+  function handleReopen() {
+    // Undo completion: move the task back to "open" and clear its timestamp.
+    dispatch({ type: 'REOPEN_TASK', taskId: task.id });
   }
 
   function handleConfirmDelete() {
@@ -97,15 +104,25 @@ export default function TaskItem({ task, onEdit }: TaskItemProps) {
         </div>
 
         <div className="flex flex-shrink-0 flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={handleComplete}
-            disabled={isDone}
-            aria-label={`Complete task: ${task.title}`}
-            className={actionButtonClass}
-          >
-            Complete
-          </button>
+          {isDone ? (
+            <button
+              type="button"
+              onClick={handleReopen}
+              aria-label={`Reopen task: ${task.title}`}
+              className={actionButtonClass}
+            >
+              Reopen
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleComplete}
+              aria-label={`Complete task: ${task.title}`}
+              className={actionButtonClass}
+            >
+              Complete
+            </button>
+          )}
 
           <button
             type="button"

@@ -136,6 +136,31 @@ export function completeTask(
 }
 
 /**
+ * Reopen a completed task, moving it from "done" back to "open".
+ *
+ * Sets the status to "open" and clears `completedAt` to `null`. Reopening is
+ * idempotent: a task that is already "open" is returned with the state
+ * unchanged. If no task matches `taskId`, the state is returned unchanged.
+ */
+export function reopenTask(state: AppState, taskId: string): AppState {
+  const index = state.tasks.findIndex((t) => t.id === taskId);
+  if (index === -1) {
+    return state;
+  }
+
+  const task = state.tasks[index];
+  if (task.status === 'open') {
+    // Already open: nothing to undo, leave the state unchanged.
+    return state;
+  }
+
+  const nextTasks = state.tasks.map((t, i) =>
+    i === index ? { ...t, status: 'open' as const, completedAt: null } : t,
+  );
+  return { ...state, tasks: nextTasks };
+}
+
+/**
  * Delete a task, removing only that task and keeping all others (R4.2).
  *
  * If no task matches `taskId`, the state is returned unchanged.

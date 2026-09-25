@@ -31,6 +31,21 @@ describe('appReducer', () => {
     expect(done.tasks[0].completedAt).toBe(1_000);
   });
 
+  it('REOPEN_TASK moves a done task back to open and clears completedAt', () => {
+    const { state, id } = withOneTask();
+    const done = appReducer(state, { type: 'COMPLETE_TASK', taskId: id, now: 1_000 });
+    expect(done.tasks[0].status).toBe('done');
+    const reopened = appReducer(done, { type: 'REOPEN_TASK', taskId: id });
+    expect(reopened.tasks[0].status).toBe('open');
+    expect(reopened.tasks[0].completedAt).toBeNull();
+  });
+
+  it('REOPEN_TASK on an already-open task is a no-op (returns same reference)', () => {
+    const { state, id } = withOneTask();
+    const result = appReducer(state, { type: 'REOPEN_TASK', taskId: id });
+    expect(result).toBe(state);
+  });
+
   it('EDIT_TASK updates the title (R3.1)', () => {
     const { state, id } = withOneTask();
     const edited = appReducer(state, {
