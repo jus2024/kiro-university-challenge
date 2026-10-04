@@ -63,6 +63,14 @@ npm run build
 npm test
 ```
 
+## Sample data
+
+`demo-data.json` in the repository root is a ready-made export you can load to
+populate the app with realistic tasks and habits. Start the dev server, then use
+the **Import** control in the app and select `demo-data.json`. The dates are
+relative-looking (recent completions and multi-day habit streaks) so the progress
+view shows non-empty stats right away.
+
 ## Built with Kiro
 
 This project was built for the Kiro University Challenge, applying one Kiro

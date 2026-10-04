@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "tasks": [
+    {
+      "id": "task-0001-demo",
+      "title": "Prepare Kiro University demo video",
+      "dueDate": "2026-10-04",
+      "tags": [
+        "kiro",
+        "demo"
+      ],
+      "status": "done",
+      "completedAt": 1791075600000,
+      "createdAt": 1790812800000
+    },
+    {
+      "id": "task-0002-demo",
+      "title": "Write submission notes for each lesson",
+      "dueDate": "2026-10-04",
+      "tags": [
+        "kiro",
+        "writing"
+      ],
+      "status": "done",
+      "completedAt": 1791086400000,
+      "createdAt": 1790899200000
+    },
+    {
+      "id": "task-0003-demo",
+      "title": "Refactor domain layer tests",
+      "dueDate": "2026-10-02",
+      "tags": [
+        "dev",
+        "testing"
+      ],
+      "status": "done",
+      "completedAt": 1790920800000,
+      "createdAt": 1790640000000
+    },
+    {
+      "id": "task-0004-demo",
+      "title": "Record screen capture walkthrough",
+      "dueDate": "2026-10-05",
+      "tags": [
+        "kiro",
+        "demo"
+      ],
+      "status": "open",
+      "completedAt": null,
+      "createdAt": 1790985600000
+    },
+    {
+      "id": "task-0005-demo",
+      "title": "Publish social post with hashtags",
+      "dueDate": "2026-10-06",
+      "tags": [
+        "kiro",
+        "writing"
+      ],
+      "status": "open",
+      "completedAt": null,
+      "createdAt": 1790985600000
+    },
+    {
+      "id": "task-0006-demo",
+      "title": "Buy groceries for the week",
+      "dueDate": "2026-10-05",
+      "tags": [
+        "home",
+        "errand"
+      ],
+      "status": "open",
+      "completedAt": null,
+      "createdAt": 1790982000000
+    },
+    {
+      "id": "task-0007-demo",
+      "title": "Review pull request feedback",
+      "dueDate": "2026-10-07",
+      "tags": [
+        "dev"
+      ],
+      "status": "open",
+      "completedAt": null,
+      "createdAt": 1791072000000
+    }
+  ],
+  "habits": [
+    {
+      "id": "habit-0008-demo",
+      "name": "Read 20 pages",
+      "targetFrequency": "daily",
+      "completions": [
+        "2026-10-04",
+        "2026-10-03",
+        "2026-10-02",
+        "2026-10-01",
+        "2026-09-30",
+        "2026-09-29",
+        "2026-09-28",
+        "2026-09-27",
+        "2026-09-26",
+        "2026-09-25",
+        "2026-09-24",
+        "2026-09-23"
+      ],
+      "createdAt": 1789340400000
+    },
+    {
+      "id": "habit-0009-demo",
+      "name": "Exercise 30 min",
+      "targetFrequency": "daily",
+      "completions": [
+        "2026-10-04",
+        "2026-10-03",
+        "2026-10-02",
+        "2026-10-01",
+        "2026-09-30",
+        "2026-09-27",
+        "2026-09-26"
+      ],
+      "createdAt": 1789340400000
+    },
+    {
+      "id": "habit-0010-demo",
+      "name": "Meditate",
+      "targetFrequency": "daily",
+      "completions": [
+        "2026-10-03",
+        "2026-10-02",
+        "2026-09-30",
+        "2026-09-28"
+      ],
+      "createdAt": 1789340400000
+    }
+  ]
+}
